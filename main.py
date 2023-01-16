@@ -25,10 +25,8 @@ e.grid(
   pady=2
 )
 
-
 def botaoClick(num):
   e.insert(END, num)
-  
 def botaoAdiciona():
   global numero1
   global adicao
@@ -61,19 +59,15 @@ def botaoIgual():
   numero2 = e.get()
   e.delete(0, END)
   if adicao == TRUE:
-    e.delete(0, END)
     e.insert(0, int(numero1) + int(numero2))
     adicao = FALSE
   if multiplicacao == TRUE:
-    e.delete(0, END)
     e.insert(0, int(numero1) * int(numero2))
     multiplicacao = FALSE
   if subtracao == TRUE:
-    e.delete(0, END)
     e.insert(0, int(numero1) - int(numero2))
     subtracao = FALSE
   if divisao == TRUE:
-    e.delete(0, END)
     e.insert(0, int(numero1) // int(numero2))
     divisao = FALSE
 def botaoLimpa():
