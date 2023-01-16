@@ -3,10 +3,10 @@ from tkinter import *
 
 numero1 = ''
 numero2 = ''
-adicao = ''
-subtracao = ''
-multiplicacao = ''
-divisao = ''
+adicao = FALSE
+subtracao = FALSE
+multiplicacao = FALSE
+divisao = FALSE
 
 root = Tk()
 root.title('Sua calculadora')
@@ -27,56 +27,60 @@ e.grid(
 
 
 def botaoClick(num):
-  atual = e.get()
-  e.delete(0, END)
-  e.insert(0, atual + str(num))
+  e.insert(END, num)
   
 def botaoAdiciona():
   global numero1
   global adicao
-  adicao = 'adicao'
+  adicao = TRUE
   numero1 = e.get()
   e.delete(0, END)
 def botaoSubtrai():
   global numero1
   global subtracao
-  subtracao = 'subtracao'
+  subtracao = TRUE
   numero1 = e.get()
   e.delete(0, END)
 def botaoMultiplica():
   global numero1
   global multiplicacao
-  multiplicacao = 'multiplicacao'
+  multiplicacao = TRUE
   numero1 = e.get()
   e.delete(0, END)
 def botaoDivide():
   global numero1
   global divisao
-  divisao = 'divisao'
+  divisao = TRUE
   numero1 = e.get()
   e.delete(0, END)
 def botaoIgual():
-  if adicao == 'adicao':
-    numero2 = e.get()
+  global subtracao
+  global divisao
+  global multiplicacao
+  global adicao
+  numero2 = e.get()
+  e.delete(0, END)
+  if adicao == TRUE:
     e.delete(0, END)
     e.insert(0, int(numero1) + int(numero2))
-  elif multiplicacao == 'multiplicacao':
-    numero2 = e.get()
+    adicao = FALSE
+  if multiplicacao == TRUE:
     e.delete(0, END)
     e.insert(0, int(numero1) * int(numero2))
-  elif subtracao == 'subtracao':
-    numero2 = e.get()
+    multiplicacao = FALSE
+  if subtracao == TRUE:
     e.delete(0, END)
     e.insert(0, int(numero1) - int(numero2))
-  elif divisao == 'divisao':
-    numero2 = e.get()
+    subtracao = FALSE
+  if divisao == TRUE:
     e.delete(0, END)
     e.insert(0, int(numero1) // int(numero2))
+    divisao = FALSE
 def botaoLimpa():
   e.delete(0, END)
 divide = Button(root,
-                 text='/',
-                 padx=42,
+                 text='÷',
+                 padx=40,
                  pady=20,
                  command=botaoDivide,
                  fg='#FFFFFF',
@@ -124,7 +128,7 @@ tres = Button(root,
               font=('futura', 12, 'bold'))
 tres.grid(row=1, column=3)
 multiplica = Button(root,
-                text='x',
+                text='×',
                 padx=40,
                 pady=20,
                 command=botaoMultiplica,
