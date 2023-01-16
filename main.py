@@ -25,33 +25,33 @@ e.grid(
   pady=2
 )
 
-def botaoClick(num):
+def botao_click(num):
   e.insert(END, num)
-def botaoAdiciona():
+def botao_adiciona():
   global numero1
   global adicao
   adicao = TRUE
   numero1 = e.get()
   e.delete(0, END)
-def botaoSubtrai():
+def botao_subrai():
   global numero1
   global subtracao
   subtracao = TRUE
   numero1 = e.get()
   e.delete(0, END)
-def botaoMultiplica():
+def botao_multiplica():
   global numero1
   global multiplicacao
   multiplicacao = TRUE
   numero1 = e.get()
   e.delete(0, END)
-def botaoDivide():
+def botao_divide():
   global numero1
   global divisao
   divisao = TRUE
   numero1 = e.get()
   e.delete(0, END)
-def botaoIgual():
+def botao_igual():
   global subtracao
   global divisao
   global multiplicacao
@@ -70,13 +70,13 @@ def botaoIgual():
   if divisao == TRUE:
     e.insert(0, int(numero1) // int(numero2))
     divisao = FALSE
-def botaoLimpa():
+def botao_limpa():
   e.delete(0, END)
 divide = Button(root,
                  text='÷',
                  padx=40,
                  pady=20,
-                 command=botaoDivide,
+                 command=botao_divide,
                  fg='#FFFFFF',
                  activebackground='#240046',
                  activeforeground='#FFFFFF',
@@ -89,7 +89,7 @@ um = Button(root,
             text='1',
             padx=40,
             pady=20,
-            command=lambda: botaoClick(1),
+            command=lambda: botao_click(1),
             fg='#FFFFFF',
             activebackground='#240046',
             activeforeground='#FFFFFF',
@@ -101,7 +101,7 @@ dois = Button(root,
               text='2',
               padx=40,
               pady=20,
-              command=lambda: botaoClick(2),
+              command=lambda: botao_click(2),
               fg='#FFFFFF',
               activebackground='#240046',
               activeforeground='#FFFFFF',
@@ -113,7 +113,7 @@ tres = Button(root,
               text='3',
               padx=40,
               pady=20,
-              command=lambda: botaoClick(3),
+              command=lambda: botao_click(3),
               fg='#FFFFFF',
               activebackground='#240046',
               activeforeground='#FFFFFF',
@@ -125,7 +125,7 @@ multiplica = Button(root,
                 text='×',
                 padx=40,
                 pady=20,
-                command=botaoMultiplica,
+                command=botao_multiplica,
                 fg='#FFFFFF',
                 activebackground='#240046',
                 activeforeground='#FFFFFF',
@@ -138,7 +138,7 @@ quatro = Button(root,
                 text='4',
                 padx=40,
                 pady=20,
-                command=lambda: botaoClick(4),
+                command=lambda: botao_click(4),
                 fg='#FFFFFF',
                 activebackground='#240046',
                 activeforeground='#FFFFFF',
@@ -150,7 +150,7 @@ cinco = Button(root,
                text='5',
                padx=40,
                pady=20,
-               command=lambda: botaoClick(5),
+               command=lambda: botao_click(5),
                fg='#FFFFFF',
                activebackground='#240046',
                activeforeground='#FFFFFF',
@@ -162,7 +162,7 @@ seis = Button(root,
               text='6',
               padx=40,
               pady=20,
-              command=lambda: botaoClick(6),
+              command=lambda: botao_click(6),
               fg='#FFFFFF',
               activebackground='#240046',
               activeforeground='#FFFFFF',
@@ -174,7 +174,7 @@ menos = Button(root,
                    text='-',
                    padx=41.5,
                    pady=20,
-                   command=botaoSubtrai,
+                   command=botao_subrai,
                    fg='#FFFFFF',
                    activebackground='#240046',
                    activeforeground='#FFFFFF',
@@ -187,7 +187,7 @@ sete = Button(root,
               text='7',
               padx=40,
               pady=20,
-              command=lambda: botaoClick(7),
+              command=lambda: botao_click(7),
               fg='#FFFFFF',
               activebackground='#240046',
               activeforeground='#FFFFFF',
@@ -199,7 +199,7 @@ oito = Button(root,
               text='8',
               padx=40,
               pady=20,
-              command=lambda: botaoClick(8),
+              command=lambda: botao_click(8),
               fg='#FFFFFF',
               activebackground='#240046',
               activeforeground='#FFFFFF',
@@ -211,7 +211,7 @@ nove = Button(root,
               text='9',
               padx=40,
               pady=20,
-              command=lambda: botaoClick(9),
+              command=lambda: botao_click(9),
               fg='#FFFFFF',
               activebackground='#240046',
               activeforeground='#FFFFFF',
@@ -223,7 +223,7 @@ mais = Button(root,
                text='+',
                padx=39,
                pady=20,
-               command=botaoAdiciona,
+               command=botao_adiciona,
                fg='#FFFFFF',
                activebackground='#240046',
                activeforeground='#FFFFFF',
@@ -236,7 +236,7 @@ zero = Button(root,
               text='0',
               padx=91,
               pady=20,
-              command=lambda: botaoClick(0),
+              command=lambda: botao_click(0),
               fg='#FFFFFF',
               activebackground='#240046',
               activeforeground='#FFFFFF',
@@ -248,7 +248,7 @@ limpa = Button(root,
                  text='C',
                  padx=42,
                  pady=20,
-                 command=botaoLimpa,
+                 command=botao_limpa,
                  fg='#FFFFFF',
                  activebackground='#240046',
                  activeforeground='#FFFFFF',
@@ -260,7 +260,7 @@ igual = Button(root,
                text='=',
                padx=40,
                pady=20,
-               command=botaoIgual,
+               command=botao_igual,
                fg='#FFFFFF',
                activebackground='#240046',
                activeforeground='#FFFFFF',
