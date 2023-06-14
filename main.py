@@ -103,66 +103,37 @@ def botao_num(num, row, column):
     botao.grid(row=row, column=column)
 
 
-divide = Button(root,
-                text='÷',
-                padx=40,
-                pady=20,
-                command=botao_divide,
-                fg='#FFFFFF',
-                activebackground='#240046',
-                activeforeground='#FFFFFF',
-                bg='#320064',
-                relief=FLAT,
-                font=('futura', 12, 'bold'))
-divide.grid(row=0, column=4)
+def botao_operador(op, command, row, column):
+    operador = Button(root,
+                      text=op,
+                      padx=40,
+                      pady=20,
+                      command=command,
+                      fg='#FFFFFF',
+                      activebackground='#240046',
+                      activeforeground='#FFFFFF',
+                      bg='#320064',
+                      relief=FLAT,
+                      font=('futura', 12, 'bold'))
+    operador.grid(row=row, column=column)
+
+
+botao_operador('÷', botao_divide, 0, 4)
 # primeira fileira
 botao_num(1, 1, 1)
 botao_num(2, 1, 2)
 botao_num(3, 1, 3)
-multiplica = Button(root,
-                    text='×',
-                    padx=40,
-                    pady=20,
-                    command=botao_multiplica,
-                    fg='#FFFFFF',
-                    activebackground='#240046',
-                    activeforeground='#FFFFFF',
-                    bg='#320064',
-                    relief=FLAT,
-                    font=('futura', 12, 'bold'))
-multiplica.grid(row=1, column=4)
+botao_operador('×', botao_multiplica, 1, 4)
 # segunda fileira
 botao_num(4, 2, 1)
 botao_num(5, 2, 2)
 botao_num(6, 2, 3)
-menos = Button(root,
-               text='-',
-               padx=41.5,
-               pady=20,
-               command=botao_subrai,
-               fg='#FFFFFF',
-               activebackground='#240046',
-               activeforeground='#FFFFFF',
-               bg='#320064',
-               relief=FLAT,
-               font=('futura', 12, 'bold'))
-menos.grid(row=2, column=4)
+botao_operador(' -', botao_subrai, 2, 4)
 # terceira fileira
 botao_num(7, 3, 1)
 botao_num(8, 3, 2)
 botao_num(9, 3, 3)
-mais = Button(root,
-              text='+',
-              padx=39,
-              pady=20,
-              command=botao_adiciona,
-              fg='#FFFFFF',
-              activebackground='#240046',
-              activeforeground='#FFFFFF',
-              bg='#320064',
-              relief=FLAT,
-              font=('futura', 12, 'bold'))
-mais.grid(row=3, column=4)
+botao_operador('+', botao_adiciona, 3, 4)
 # quarta fileira
 zero = Button(root,
               text='0',
@@ -176,29 +147,7 @@ zero = Button(root,
               relief=FLAT,
               font=('futura', 12, 'bold'))
 zero.grid(row=4, column=1, columnspan=2)
-limpa = Button(root,
-               text='C',
-               padx=42,
-               pady=20,
-               command=botao_limpa,
-               fg='#FFFFFF',
-               activebackground='#240046',
-               activeforeground='#FFFFFF',
-               bg='#320064',
-               relief=FLAT,
-               font=('futura', 12, 'bold'))
-limpa.grid(row=4, column=4)
-igual = Button(root,
-               text='=',
-               padx=40,
-               pady=20,
-               command=botao_igual,
-               fg='#FFFFFF',
-               activebackground='#240046',
-               activeforeground='#FFFFFF',
-               bg='#320064',
-               relief=FLAT,
-               font=('futura', 12, 'bold'))
-igual.grid(row=4, column=3)
+botao_operador('C', botao_limpa, 4, 4)
+botao_operador('=', botao_igual, 4, 3)
 
 root.mainloop()
